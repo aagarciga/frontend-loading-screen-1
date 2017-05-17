@@ -1,0 +1,85 @@
+@color-mojo: #cb4749;
+@loading-size: 60px;
+
+body{
+  margin: 0;
+}
+
+.loading-screen{  
+  position: absolute;  
+  width: 100vw;
+  height: 100vh;  
+  // background-color: #2f4067;
+  opacity: 0.9;
+  
+  &.show{
+    display: block;
+  }
+  
+  .loading-screen-shapes{
+    position: absolute;
+    margin: auto;
+    width: @loading-size;
+    height: @loading-size;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+    .loading-screen-shape {      
+      width: 6px;
+      height: 6px;
+      background: @color-mojo;
+      box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.125);
+      
+      // border-radius: 50%;
+      position: absolute;
+      animation: loop 2s infinite ease-in-out;
+    
+      &#shape1{        
+        left: 0px;
+        top: 0px;        
+      }
+      &#shape2{
+        left: 50px;
+        top: 0px;
+        animation-delay: -1s;
+      }
+      &#shape3 {
+        left: 50px;
+        top: 50px;
+        animation-delay: -0.5s;
+      }
+      &#shape4 {
+        left: 0px;
+        top: 50px;
+        animation-delay: -1.5s;
+      }
+    }
+  }  
+}
+
+@keyframes loop{
+  0%{
+    left:0px;
+    top: 0px;
+  }
+  25%{
+    left: 50px;
+    top: 0px;
+  }
+  50%{
+    top: 50px;
+    transform: scale(4);
+    left: 50px;
+  }
+  75%{
+    top: 50px;
+    left: 0px;
+  }
+  100%{
+    top: 0px;
+    transform: scale(1);
+    left: 0px;
+  }
+}

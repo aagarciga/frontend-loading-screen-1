@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+}
+
+.loading-screen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.9;
+}
+
+.loading-screen.show {
+    display: block;
+}
+
+.loading-screen .loading-screen-shapes {
+    position: absolute;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.loading-screen .loading-screen-shapes .loading-screen-shape {
+    width: 6px;
+    height: 6px;
+    background: #cb4749;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.125);
+    position: absolute;
+    animation: loop 2s infinite ease-in-out;
+}
+
+.loading-screen .loading-screen-shapes .loading-screen-shape#shape1 {
+    left: 0px;
+    top: 0px;
+}
+
+.loading-screen .loading-screen-shapes .loading-screen-shape#shape2 {
+    left: 50px;
+    top: 0px;
+    animation-delay: -1s;
+}
+
+.loading-screen .loading-screen-shapes .loading-screen-shape#shape3 {
+    left: 50px;
+    top: 50px;
+    animation-delay: -0.5s;
+}
+
+.loading-screen .loading-screen-shapes .loading-screen-shape#shape4 {
+    left: 0px;
+    top: 50px;
+    animation-delay: -1.5s;
+}
+
+@keyframes loop {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        left: 50px;
+        top: 0px;
+    }
+    50% {
+        top: 50px;
+        transform: scale(4);
+        left: 50px;
+    }
+    75% {
+        top: 50px;
+        left: 0px;
+    }
+    100% {
+        top: 0px;
+        transform: scale(1);
+        left: 0px;
+    }
+}
